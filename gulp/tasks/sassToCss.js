@@ -12,12 +12,12 @@ export const sassToCss = () => {
 	return (
 		app.gulp
 			.src(app.path.src.sass, { sourcemaps: app.isDev })
-			.pipe(app.plugins.replace(/@img\//g, '../images/'))
 			.pipe(
 				sass({
 					outputStyle: 'expanded',
 				})
 			)
+			.pipe(app.plugins.replace(/@img\//g, '../images/'))
 			.pipe(app.plugins.if(app.isBuild, groupCssMediaQueries()))
 			.pipe(
 				app.plugins.if(
