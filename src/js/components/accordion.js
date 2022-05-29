@@ -6,12 +6,26 @@
 	4) Контентным блокам дать класс .accordion__content
 	5) Айтемам в Sass дать высоту такую же, как и у заголовка .accordion__title
 	5) Проинициализировать аккордеон
+
+	Пример pug-структуры
+	.класс
+		.класс__item.accordion__item 
+			.класс__title.accordion__title Первый
+			.класс__content.accordion__content Первый блок
+		.класс__item.accordion__item 
+			.класс__title.accordion__title Второй
+			.класс__content.accordion__content Второй блок
+		.класс__item.accordion__item 
+			.класс__title.accordion__title Третий
+			.класс__content.accordion__content Третий блок 
 */
 export class Accordion {
 	constructor(accordionWrapper) {
 		this.accordion = document.querySelector(accordionWrapper)
 		this.accordionItemsNodes = this.accordion.querySelectorAll('.accordion__item')
 		this.accordionItems = []
+
+		this.init()
 	}
 
 	openAccordionItem(element) {

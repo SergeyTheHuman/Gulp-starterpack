@@ -17,6 +17,19 @@
 			display: none !important
 		.tabs__item--active
 			display: block !important
+
+	Пример pug-структуры
+	.класс
+		.класс__buttons
+			.класс__button.tabs__button(data-tabs-path='first').tabs__button--active Первый
+			.класс__button.tabs__button(data-tabs-path='second') Второй
+			.класс__button.tabs__button(data-tabs-path='third') Третий
+		.класс__item.tabs__item(data-tabs-target='first').tabs__item--active
+			.класс__content
+		.класс__item.tabs__item(data-tabs-target='second')
+			.класс__content
+		.класс__item.tabs__item(data-tabs-target='third')
+			.класс__content
 */
 
 export class Tabs {
@@ -24,6 +37,8 @@ export class Tabs {
 		this.tabs = document.querySelector(tabsWrapper)
 		this.currentBtn = this.tabs.querySelector('.tabs__button--active')
 		this.currentItem = this.tabs.querySelector('.tabs__item--active')
+
+		this.init()
 	}
 	changeTab(path) {
 		this.currentBtn.classList.remove('tabs__button--active')
