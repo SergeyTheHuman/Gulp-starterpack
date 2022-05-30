@@ -2,11 +2,12 @@
 	Чтобы все работало нужно:
 	1) При инициализации передать селектор враппера всего табов
 	2) Кнопкам переключения дать класс .tabs__button + дата атрибуты для связи с табами data-tabs-path='first'
-	3) Активной кнопке дать класс .tabs__button--active
+	3) Изначально активной кнопке дать класс .tabs__button--active
 	4) Контентным блокам дать класс .tabs__item + дата атрибуты для связа с кнопками data-tabs-target='first'
-	5) Активному блоку дать класс .tabs__item--active
-	6) Проинициализировать табы
+	5) Изначально активному блоку дать класс .tabs__item--active
 	
+	|---------------------|
+
 	Необходимые Sass-классы
 		.tabs__button
 			&:not(.tabs__button--active)
@@ -18,18 +19,20 @@
 		.tabs__item--active
 			display: block !important
 
+	|---------------------|
+
 	Пример pug-структуры
-	.класс
-		.класс__buttons
-			.класс__button.tabs__button(data-tabs-path='first').tabs__button--active Первый
-			.класс__button.tabs__button(data-tabs-path='second') Второй
-			.класс__button.tabs__button(data-tabs-path='third') Третий
-		.класс__item.tabs__item(data-tabs-target='first').tabs__item--active
-			.класс__content
-		.класс__item.tabs__item(data-tabs-target='second')
-			.класс__content
-		.класс__item.tabs__item(data-tabs-target='third')
-			.класс__content
+		.класс
+			.класс__buttons
+				.класс__button.tabs__button(data-tabs-path='first').tabs__button--active Первый
+				.класс__button.tabs__button(data-tabs-path='second') Второй
+				.класс__button.tabs__button(data-tabs-path='third') Третий
+			.класс__item.tabs__item(data-tabs-target='first').tabs__item--active
+				.класс__content
+			.класс__item.tabs__item(data-tabs-target='second')
+				.класс__content
+			.класс__item.tabs__item(data-tabs-target='third')
+				.класс__content
 */
 
 export class Tabs {
