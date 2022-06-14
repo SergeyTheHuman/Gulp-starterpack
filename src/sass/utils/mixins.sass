@@ -9,7 +9,7 @@
 @mixin font($font_name, $size, $weight: 400, $style: normal)
 	font-family: $font_name
 	font-display: swap
-	font-size: #{$size}
+	font-size: #{$size}px
 	font-weight: #{$weight}
 	font-style: #{$style}
 
@@ -31,3 +31,9 @@
 	background-size: #{$size}
 	background-position: #{$position}
 	background-repeat: #{$repeat}
+
+@mixin container($container, $padding: 25)
+	width: 100%
+	max-width: calc(#{$container} + #{$padding}px * 2)
+	padding: 0 #{$padding}px
+	margin: 0 auto
