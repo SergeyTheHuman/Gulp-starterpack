@@ -13,7 +13,7 @@ $transition: 0.3s all ease-in-out
 $container: 1300px
 
 //----------------------ANIMATIONS----------------------//	
-@keyframes blinkAnimation
+@keyframes fadeAnimation
 	0%
 		opacity: 1
 	50%
@@ -44,6 +44,8 @@ html
 	height: 100%
 	color: $color-white
 	background: $color-darkblue
+	@include font('proximanova', 16, 300)
+	line-height: 1.4
 
 .wrapper
 	@include container($container)

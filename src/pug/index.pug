@@ -3,13 +3,12 @@ html(lang="ru")
 	head
 		include utils/mixins
 		include utils/meta
-		link(rel="stylesheet", href="css/style.min.css")
-		link(rel="shortcut icon", href="files/favicon.ico")
+		include utils/links
 		include utils/fonts
 		title Main Page
 	body
 		.wrapper
 			include components/header
-			
+
 			include components/footer
-		script(src='js/app.min.js')
+		include utils/scripts
