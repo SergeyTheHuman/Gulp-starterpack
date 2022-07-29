@@ -4,6 +4,8 @@ export class Accordion {
 		this.accordion = document.querySelector(accordionWrapper)
 		this.accordionItemsNodes = this.accordion.querySelectorAll('.accordion__item')
 		this.accordionItems = []
+
+		this.init()
 	}
 
 	openAccordionItem(element) {
@@ -13,7 +15,9 @@ export class Accordion {
 		element.opened = true
 	}
 	closeAccordionItem(element) {
-		element.node.style.height = `${element.titleHeight}px`
+		setTimeout(() => {
+			element.node.style.height = `${element.titleHeight}px`
+		}, 400)
 		element.node.removeAttribute('data-accordion-opened')
 		element.title.classList.remove('active')
 		element.opened = false
@@ -35,7 +39,7 @@ export class Accordion {
 		}
 		this.accordionItems.forEach((element) => {
 			element.node.style.height = `${element.titleHeight}px`
-			element.node.addEventListener('click', (e) => {
+			element.title.addEventListener('click', (e) => {
 				if (!element.opened) {
 					if (this.type === 'single') {
 						this.accordionItems.forEach((el) => this.closeAccordionItem(el))
