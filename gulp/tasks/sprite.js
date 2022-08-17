@@ -21,20 +21,20 @@ export const sprite = () => {
 				})
 			)
 			//Нужно для того, чтобы автоматически все заливки менялись на currentColor, это позволит свободно перекрашивать спрайты через обычное свойство color в CSS
-			.pipe(
-				app.plugins.replace(
-					// /(fill=\"\#\w{1,6}\")|(fill=\"\")|(fill=\"\w{1,6}\")/g, //Ищет все варианты fill=""/fill="none"/fill="#000FFF"
-					/(fill=\"\#\w{1,6}\")/g,
-					'fill="currentColor"'
-				)
-			)
-			.pipe(
-				app.plugins.replace(
-					// /(stroke=\"\#\w{1,6}\")|(stroke=\"\")|(stroke=\"\w{1,6}\")/g, //Ищет все варианты stroke=""/stroke="none"/stroke="#000FFF"
-					/(stroke=\"\#\w{1,6}\")/g,
-					'stroke="currentColor"'
-				)
-			)
+			// .pipe(
+			// 	app.plugins.replace(
+			// 		// /(fill=\"\#\w{1,6}\")|(fill=\"\")|(fill=\"\w{1,6}\")/g, //Ищет все fill="#000FFF"
+			// 		/(fill=\"\#\w{1,6}\")/g,
+			// 		'fill="currentColor"'
+			// 	)
+			// )
+			// .pipe(
+			// 	app.plugins.replace(
+			// 		// /(stroke=\"\#\w{1,6}\")|(stroke=\"\")|(stroke=\"\w{1,6}\")/g, //Ищет все stroke="#000FFF"
+			// 		/(stroke=\"\#\w{1,6}\")/g,
+			// 		'stroke="currentColor"'
+			// 	)
+			// )
 			.pipe(app.gulp.dest(app.path.build.images))
 	)
 }

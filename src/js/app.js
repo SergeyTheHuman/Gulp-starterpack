@@ -1,3 +1,3 @@
-import { isWebp } from './components/isWebp.js'
+import { isWebp } from './utils/isWebp.js'
 
 isWebp()
